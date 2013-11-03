@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Carleton Assassins Webapp - Carissa Knipe</h1>
+
+
+<h2>I. Project Description</h2>
+<p><b>Feature 1.</b> Player selection. Choose a player and see their stats, including their K/D ratio, if they were the last player standing during any round. See also a table of each kill they made and each of their deaths.
+<br><b>Feature 2.</b> Overall views. Choose something interesting to see (some ordering of players, or most popular ways to die, etc.)
+<br><b>Feature 3.</b> Round views. Choose a round to see all kills that happened during that round.
+<br><b>Feature 4.</b> Mycroft Order. There is a sort of awards page for players who have accomplished specific feats. This is where they are listed.
+
+
+<h2>II. Citations</h2>
+<p>The data is on Carleton Moodle, but only if you are signed up as a member of the Assassins Guild. All data used is under "Past Rounds", except the Mycroft Order page, which is under "Mycroft Order". The current maintainer of the page is Daniel Simmons-Marengo.</p>
+
+
+<h2>III. Changing Goals</h2>
+<p>As I progressed with the project I talked with friends who are very involved in Assassins and they gave suggestions for things they were interested in. They were less interested in seeing a specific player's stats and more interested in seeing overall trends. So I still kept the ability to see general stats for an individual, but focused more on looking at overall trends and rankings.</p>
+<p>I also thought of first having a search-by-player feature, but after implementing it, realized that it might be better to have a drop-down list. You could see all the players, so it wouldn't be all on you as the user to spell the name correctly, and you can start typing the letters of their name and it will automatically bring you to that part of the list (the players are listed in alphabetical order)</p>
+
+
+<h2>IV. Helpful Information</h2>
+<p>1. If you're using the cgi debugger, a syntax error will still give an Internal Server Error.</p>
+<p>2. Is there a way to use a non-command-line text editor I like without having to do it on my machine, and scp it to thacker every time I save it?</p>
+<p>3. SELECT p1.name, p2.name FROM players p1, players p2</p>
+
+
+<h2>V. Data Importation</h2>
+<p>fixData.py - formats each entry as desired into another excel spreadsheet</p>
+<p>separate.py - separates the fixed excel spreadsheet into multiple csv files with id's for the database</p>
+<p>Both of these files are in the datafiles/ directory within webapp4.</p>
+
+<h2>VI. Create Table Statements</h2>
+<a href="tables.sql">tables.sql</a>
+
+</body>
+</html>
