@@ -214,7 +214,7 @@ class HTMLCreator:
     def overallTable(self, overallView):
         '''Returns HTML for a specific view's table'''
         resultsPage = ""
-        if overallView == '1':
+        if overallView == 'popularDeaths':
             allDeaths = self.data.getListOfDeathMethods()
             resultsPage += '<table border="1">\n'
             resultsPage += "<tr><td><b>%s</b></td> <td><b>%s</b></td></tr>" % ("Death", "Instances")
@@ -222,7 +222,7 @@ class HTMLCreator:
                 resultsPage += '<tr><td>%s</td> <td>%d</td></tr>' % (death[0], death[1])
             resultsPage += '</table>\n'             
 
-        if overallView == '2':
+        if overallView == 'playersByAlphabetical':
             playersList = self.data.getListOfPlayers()
             resultsPage += '<table border="1">\n'
             resultsPage += "<tr><td><b>%s</b></td></tr>" % ("Player")
@@ -230,7 +230,7 @@ class HTMLCreator:
                 resultsPage += '<tr><td>%s</td>' % (player)
             resultsPage += '</table>\n'             
 
-        elif overallView == '3':
+        elif overallView == 'playersByKills':
             rankedPlayersList = self.data.getPlayersAndTotalKills()
             resultsPage += '<table border="1">\n'
             resultsPage += "<tr><td><b>%s</b></td> <td><b>%s</b></td></tr>" % ("Player", "Number of kills")
@@ -238,7 +238,7 @@ class HTMLCreator:
                 resultsPage += '<tr><td>%s</td> <td>%s</td>' % (player[0], player[1])
             resultsPage += '</table>\n'             
 
-        elif overallView == '4':
+        elif overallView == 'playersByRounds':
             resultsPage += "<h2>(Out of %d total rounds)</h2>" % (len(self.data.getTermsAndRounds()))
             rankedPlayersList = self.data.getPlayersAndRoundsPlayed()
             resultsPage += '<table border="1">\n'
@@ -247,7 +247,7 @@ class HTMLCreator:
                 resultsPage += '<tr><td>%s</td> <td>%s</td>' % (player[0], player[1])
             resultsPage += '</table>\n'
 
-        elif overallView == '5':
+        elif overallView == 'playersByKD':
             rankedPlayersList = self.data.getPlayersAndKDRatios()
             resultsPage += '<table border="1">\n'
             resultsPage += "<tr><td><b>%s</b></td> <td><b>%s</b></td></tr>" % ("Player", "K/D Ratio")
@@ -255,7 +255,7 @@ class HTMLCreator:
                 resultsPage += '<tr><td>%s</td> <td>%s</td>' % (player[0], player[1])
             resultsPage += '</table>\n'
 
-        elif overallView == '6':
+        elif overallView == 'deathTimes':
             timesList = self.data.getKillTimes()
             resultsPage += '<table border="1">\n'
             resultsPage += "<tr><td><b>%s</b></td> <td><b>%s</b></td></tr>" % ("Time", "Number of deaths")
@@ -269,17 +269,17 @@ class HTMLCreator:
 
     def overallValToTitle(self, overallView):
         '''Given the value from the overall view form, returns the appropriate title'''
-        if overallView == '1':
+        if overallView == 'popularDeaths':
             title = "Coolest ways to die"
-        elif overallView == '2':
+        elif overallView == 'playersByAlphabetical':
             title = "All players (alphabetical)"
-        elif overallView == '3':
+        elif overallView == 'playersByKills':
             title = "All players (# of kills)"
-        elif overallView == '4':
+        elif overallView == 'playersByRounds':
             title = "All players (# of rounds)"
-        elif overallView == '5':
+        elif overallView == 'playersByKD':
             title = "All players (K/D ratio)"
-        elif overallView == '6':
+        elif overallView == 'deathTimes':
             title = "Times of death"
         else:
             title = ""

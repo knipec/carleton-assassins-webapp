@@ -16,12 +16,7 @@ import datasource
 import htmlcreator
 
 cgitb.enable()
-# Get the user input
 form = cgi.FieldStorage()
-#animal = form['animal'].value
-#badAnimal = form['badanimal'].value
-# ***** SANITIZE USER INPUT HERE ****
-
 data = datasource.DataSource()
 html = htmlcreator.HTMLCreator()
 
